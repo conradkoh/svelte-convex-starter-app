@@ -9,6 +9,16 @@ importers:
   .: {}
 
   apps/webapp:
+    dependencies:
+      '@workspace/backend':
+        specifier: workspace:*
+        version: link:../../services/backend
+      convex:
+        specifier: ^1.20.0
+        version: 1.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      convex-svelte:
+        specifier: ^0.0.11
+        version: 0.0.11(convex@1.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(svelte@5.23.0)
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^3
@@ -1506,6 +1516,12 @@ packages:
   consola@3.4.0:
     resolution: {integrity: sha512-EiPU8G6dQG0GFHNR8ljnZFki/8a+cQwEQ+7wpxdChl02Q8HXlwEZWD5lqAF8vC2sEC3Tehr8hy7vErz88LHyUA==}
     engines: {node: ^14.18.0 || >=16.10.0}
+
+  convex-svelte@0.0.11:
+    resolution: {integrity: sha512-N/29gg5Zqy72vKL4xHSLk3jGwXVKIWXPs6xzq6KxGL84y/D6hG85pG2CPOzn08EzMmByts5FTkJ5p3var6yDng==}
+    peerDependencies:
+      convex: ^1.10.0
+      svelte: ^5.0.0
 
   convex@1.20.0:
     resolution: {integrity: sha512-JwccnuJwAw0fLdp3DaNR4JM+5fKTMdTvu6PXRmGLrWXg7epQi/2X0UlxxQ6Hb/b8UuJVxUEnCVJyomF75wjZ5A==}
@@ -4620,6 +4636,11 @@ snapshots:
   concat-map@0.0.1: {}
 
   consola@3.4.0: {}
+
+  convex-svelte@0.0.11(convex@1.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(svelte@5.23.0):
+    dependencies:
+      convex: 1.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      svelte: 5.23.0
 
   convex@1.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
