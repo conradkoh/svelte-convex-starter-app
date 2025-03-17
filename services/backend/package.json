@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "convex dev"
+    "dev": "convex dev",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No tests configured\" && exit 0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "convex": "^1.20.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
   }
 }

@@ -1,19 +1,24 @@
 {
-  "name": "react-convex-starter-app",
+  "name": "svelte-convex-starter-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nx run-many --target=dev --parallel",
+    "test": "nx run-many --target=test --parallel",
+    "typecheck": "nx run-many --target=typecheck --parallel",
+    "build": "nx run-many --target=build --parallel"
   },
-  "keywords": [
-    
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild"
     ]
+  },
+  "devDependencies": {
+    "@nx/workspace": "^20.6.0",
+    "nx": "^20.6.0"
   }
 }
