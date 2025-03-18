@@ -19,6 +19,21 @@
         <p class="text-green-600">With the latest Svelte capabilities</p>
       </div>
     </div>
+    
+    <div class="mt-8">
+      <h2 class="mb-4 text-2xl font-semibold text-gray-800">Available Tools</h2>
+      <div class="rounded-lg bg-yellow-50 p-4 shadow">
+        <h3 class="text-xl font-semibold text-yellow-800">Financial Health Assessment</h3>
+        <p class="mb-2 text-yellow-600">Get a personalized financial health assessment and recommendations</p>
+        <a href="/finance-assessment" class="inline-block rounded-md bg-yellow-500 px-4 py-2 text-white hover:bg-yellow-600">Try it now</a>
+      </div>
+      
+      <div class="mt-4 rounded-lg bg-green-50 p-4 shadow">
+        <h3 class="text-xl font-semibold text-green-800">Blog</h3>
+        <p class="mb-2 text-green-600">Read our latest articles on personal finance and financial health</p>
+        <a href="/blog" class="inline-block rounded-md bg-green-500 px-4 py-2 text-white hover:bg-green-600">View Blog</a>
+      </div>
+    </div>
   </div>
 
   <footer class="mt-8 text-center text-gray-600">
