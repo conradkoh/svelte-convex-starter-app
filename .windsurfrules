@@ -1,0 +1,72 @@
+# Svelte-Convex Starter App Windsurf Rules
+
+## Project Structure
+
+- This project uses a workspace-based monorepo structure
+- Always use pnpm to install files
+
+## Svelte 5 Component Rules
+
+- Components must have only ONE top-level <style> block
+- All styles must be combined into a single block
+- Use existing Tailwind patterns with @apply directives
+- Maintain proper TypeScript types for all variables
+
+## Charting Implementation
+
+- Prefer HTML5 Canvas API for basic charts to avoid dependency issues
+- Canvas implementation pattern:
+
+  ```svelte
+  <script>
+    import { onMount } from 'svelte';
+
+    let chartCanvas: HTMLCanvasElement;
+
+    function updateChart() {
+      const ctx = chartCanvas.getContext('2d');
+      // Chart drawing logic
+    }
+
+    $: if (chartCanvas && dataChanged) updateChart();
+
+    onMount(() => {
+      if (chartCanvas) updateChart();
+    });
+  </script>
+
+  <canvas bind:this={chartCanvas} width="300" height="200"></canvas>
+  ```
+
+- For complex charts, use CDN-hosted libraries instead of npm
+- Clear canvas before redrawing to prevent overlapping renders
+- Include proper scaling for different screen sizes
+
+## Accessibility Requirements
+
+- Always use id attributes on form inputs
+- Connect labels using for attribute matching the input's id
+- Add appropriate ARIA attributes to charts for screen readers
+- Include descriptive text alternatives for visual data
+
+## Error Prevention
+
+- Make all related changes in a single edit operation
+- Add null checks before accessing canvas contexts
+- Provide fallback displays when charts can't be rendered
+- Handle window resize events for responsive charts
+
+## Testing Configuration
+
+- When testing Svelte 5 components with Vitest and JSDOM, configure Vite to use the browser version of Svelte
+- Add 'browser' condition to resolve.conditions in vitest.config.js:
+  ```javascript
+  // vitest.config.js
+  export default defineConfig({
+    // ...other config
+    resolve: {
+      conditions: ['browser'],
+    },
+  });
+  ```
+- Alternatively, use the svelteTesting plugin from @testing-library/svelte/vite
